@@ -2,20 +2,36 @@ import React from "react";
 import hero1 from "../assets/images/hero_1.jpg";
 import about1 from "../assets/images/about_1.jpg";
 import about2 from "../assets/images/about_2.jpg";
+import MSK7444 from "../assets/images/MSK_7444.JPG";
+import MSK7428 from "../assets/images/MSK_7428.JPG";
+import MSK7459 from "../assets/images/MSK_7459.JPG";
+import banner from "../assets/images/budha_banner1.jpg"
+
+import MSK7433 from "../assets/images/MSK_7433.JPG";
+import MSK7465 from "../assets/images/MSK_7465.JPG";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import "/node_modules/video-react/dist/video-react.css"; // import css
+import { Player } from "video-react";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateToContacts = (e) => {
+    e.preventDefault();
+    navigate("/contact");
+  };
   return (
     <>
       <div className="ftco-blocks-cover-1">
         <div
           className="site-section-cover overlay"
           data-stellar-background-ratio="0.5"
-          style={{ backgroundImage: `url(${hero1})` }}
+          style={{ backgroundImage: `url(${banner})`,backgroundSize:"contain" }}
         >
           <div className="container">
             <div className="row align-items-center">
               <div className="col-md-7">
-                <h1 className="mb-3">Spa Which You Love</h1>
+                <h1 className="mb-3">Spa which you Love</h1>
                 <p>
                   BODHI SPA is a sanctuary where you can relax and rejuvenate.
                   We offer a variety of treatments, including massages, facials,
@@ -23,8 +39,12 @@ const Home = () => {
                   out.
                 </p>
                 <p>
-                  <a href="#" className="btn btn-primary">
-                    Learn More
+                  <a
+                    href="#"
+                    onClick={navigateToContacts}
+                    className="btn btn-primary"
+                  >
+                    Contact Us
                   </a>
                 </p>
               </div>
@@ -40,7 +60,7 @@ const Home = () => {
               <h2 className="serif font-weight-bold mb-3">
                 Bodhi Spa &amp; Wellness
               </h2>
-              <p className="font-weight-bold">
+              <p>
                 We believe that everyone deserves to feel pampered and cared
                 for. That is why we offer a wide range of services, all designed
                 to help you relax and de-stress. Whether you are looking for a
@@ -51,7 +71,7 @@ const Home = () => {
                 make you feel welcome and comfortable. We want you to feel like
                 you are in your own personal oasis.
               </p>
-              <p>
+              <p className="font-weight-bold">
                 Why wait!??? Come and relax at our spa. We promise you will
                 leave feeling refreshed and rejuvenated.
               </p>
@@ -73,18 +93,23 @@ const Home = () => {
             </div>
             <div className="col-md-6">
               <div className="d-flex align-items-center">
-                <div
+                <Player
+                  playsInline
+                  poster={require("../assets/images/MSK_7444.JPG")}
+                  src={require("../assets/video/bodhi_spa.mp4")}
+                />
+                {/* <div
                   className="bg-img-1 mr-md-4 mt-md-5"
                   style={{
-                    backgroundImage: `url(${about1})`,
+                    backgroundImage: `url(${MSK7444})`,
                   }}
                 ></div>
                 <div
                   className="bg-img-1"
                   style={{
-                    backgroundImage: `url(${about2})`,
+                    backgroundImage: `url(${MSK7428})`,
                   }}
-                ></div>
+                ></div> */}
               </div>
             </div>
           </div>
@@ -105,16 +130,16 @@ const Home = () => {
               <div className="service_13987">
                 <a href="#" className="mb-3 d-block">
                   <img
-                    src={require("../assets/images/img_1.jpg")}
+                    src={require("../assets/images/swedish_massage.jpg")}
                     alt="Image"
                     className="img-fluid"
                   />
                 </a>
                 <div className="text">
-                  <h3 className="serif mb-3">Body Shrub</h3>
+                  <h3 className="serif mb-3">Swedish Massage</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ratione eius recusandae, porro ipsa necessitatibus autem!
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione eius recusandae, porro ipsa necessitatibus autem! */}
                   </p>
                 </div>
               </div>
@@ -123,16 +148,16 @@ const Home = () => {
               <div className="service_13987">
                 <a href="#" className="mb-3 d-block">
                   <img
-                    src={require("../assets/images/img_2.jpg")}
+                    src={require("../assets/images/aroma_massage.jpg")}
                     alt="Image"
                     className="img-fluid"
                   />
                 </a>
                 <div className="text">
-                  <h3 className="serif mb-3">Relax Massage</h3>
+                  <h3 className="serif mb-3">Aroma Massage</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ratione eius recusandae, porro ipsa necessitatibus autem!
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione eius recusandae, porro ipsa necessitatibus autem! */}
                   </p>
                 </div>
               </div>
@@ -141,16 +166,16 @@ const Home = () => {
               <div className="service_13987">
                 <a href="#" className="mb-3 d-block">
                   <img
-                    src={require("../assets/images/img_3.jpg")}
+                    src={require("../assets/images/deep_tissue_massage.jpg")}
                     alt="Image"
                     className="img-fluid"
                   />
                 </a>
                 <div className="text">
-                  <h3 className="serif mb-3">Facial Spa</h3>
+                  <h3 className="serif mb-3">Deep tissue Massage</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ratione eius recusandae, porro ipsa necessitatibus autem!
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione eius recusandae, porro ipsa necessitatibus autem! */}
                   </p>
                 </div>
               </div>
@@ -159,16 +184,16 @@ const Home = () => {
               <div className="service_13987">
                 <a href="#" className="mb-3 d-block">
                   <img
-                    src={require("../assets/images/img_4.jpg")}
+                    src={require("../assets/images/thai_massage.jpg")}
                     alt="Image"
                     className="img-fluid"
                   />
                 </a>
                 <div className="text">
-                  <h3 className="serif mb-3">Body Shrub</h3>
+                  <h3 className="serif mb-3">Thai Massage</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ratione eius recusandae, porro ipsa necessitatibus autem!
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ratione eius recusandae, porro ipsa necessitatibus autem! */}
                   </p>
                 </div>
               </div>
@@ -177,29 +202,29 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="site-section services_294491">
+      <div className="site-section services_294491" style={{display:"none"}}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
               <h2 className="serif text-white font-weight-bold text-primary">
-                Get 20% discount{" "}
+                Get 10% discount{" "}
               </h2>
               <p className="lead">
                 Lorem ipsum doltnor sit amet, consectetur adipisicing elit.
               </p>
               <p>
-                <a href="#" className="btn btn-primary">
+                <a href="/contact" className="btn btn-primary">
                   Contact us
                 </a>
               </p>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div
         className="site-section bg-image overlay features_75651"
-        style={{ backgroundImage: `url(${hero1})` }}
+        style={{ backgroundImage: `url(${hero1})`, display: "none" }}
       >
         <div className="container">
           <div className="row">
@@ -270,7 +295,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="site-section">
+      <div className="site-section" style={{ display: "none" }}>
         <div className="text-center">
           <h2 className="heading-border-bottom font-weight-bold serif text-black mb-5 text-center">
             Testimonials
@@ -282,7 +307,7 @@ const Home = () => {
             <div className="testimonial-2">
               <div className="d-flex v-card align-items-center mb-4">
                 <img
-                  src={require("./assets/images/person_1.jpg")}
+                  src={require("../assets/images/person_1.jpg")}
                   alt="Image"
                   className="img-fluid mr-3"
                 />
@@ -301,7 +326,7 @@ const Home = () => {
             <div className="testimonial-2">
               <div className="d-flex v-card align-items-center mb-4">
                 <img
-                  src={require("./assets/images/person_2.jpg")}
+                  src={require("../assets/images/person_2.jpg")}
                   alt="Image"
                   className="img-fluid mr-3"
                 />
@@ -320,7 +345,7 @@ const Home = () => {
             <div className="testimonial-2">
               <div className="d-flex v-card align-items-center mb-4">
                 <img
-                  src={require("./assets/images/person_3.jpg")}
+                  src={require("../assets/images/person_3.jpg")}
                   alt="Image"
                   className="img-fluid mr-3"
                 />
@@ -339,7 +364,7 @@ const Home = () => {
             <div className="testimonial-2">
               <div className="d-flex v-card align-items-center mb-4">
                 <img
-                  src={require("./assets/images/person_4.jpg")}
+                  src={require("../assets/images/person_4.jpg")}
                   alt="Image"
                   className="img-fluid mr-3"
                 />
@@ -358,7 +383,7 @@ const Home = () => {
             <div className="testimonial-2">
               <div className="d-flex v-card align-items-center mb-4">
                 <img
-                  src={require("./assets/images/person_3.jpg")}
+                  src={require("../assets/images/person_3.jpg")}
                   alt="Image"
                   className="img-fluid mr-3"
                 />
@@ -382,7 +407,7 @@ const Home = () => {
             Next
           </a>
         </div>
-      </div> */}
+      </div>
 
       <div className="site-section">
         <div className="container">
@@ -404,13 +429,13 @@ const Home = () => {
                 <div
                   className="bg-img-1 mr-md-4 mt-md-5"
                   style={{
-                    backgroundImage: `url(${about1})`,
+                    backgroundImage: `url(${MSK7433})`,
                   }}
                 ></div>
                 <div
                   className="bg-img-1"
                   style={{
-                    backgroundImage: `url(${about2})`,
+                    backgroundImage: `url(${MSK7465})`,
                   }}
                 ></div>
               </div>

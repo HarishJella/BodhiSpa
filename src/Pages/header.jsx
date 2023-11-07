@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.jpg";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const location = useLocation();
+  const [path, setPath] = useState("home");
+
+  useEffect(() => {
+    console.log("location", location);
+    const pathName = location.pathname.slice(1);
+    setPath(pathName || 'home');
+  }, [location.pathname]);
+
   return (
     <>
       <header className="site-navbar site-navbar-target" role="banner">
@@ -8,7 +20,10 @@ const Header = () => {
           <div className="row align-items-center position-relative">
             <div className="col-3 ">
               <div className="site-logo serif">
-                <a href="">Bodhi Spa</a>
+                {/* <a href="">Bodhi Spa</a> */}
+                <a href="">
+                  <img className="logo" alt="logo" src={logo} />
+                </a>
               </div>
             </div>
 
@@ -27,18 +42,15 @@ const Header = () => {
                 role="navigation"
               >
                 <ul className="site-menu main-menu js-clone-nav ml-auto ">
-                  <li className="active">
+                  <li className={path === "home" ? "active" : ""}>
                     <Link className="nav-link" to="/home">
                       Home
                     </Link>
-                    {/* <a href="" className="nav-link">
-                      Home
-                    </a> */}
                   </li>
                   <li>
-                    <Link className="nav-link" to="/about">
+                    {/* <Link className="nav-link" to="/about">
                       About
-                    </Link>
+                    </Link> */}
                     {/* <a href="about.html" className="nav-link">
                       About
                     </a> */}
@@ -48,23 +60,20 @@ const Header = () => {
                       Services
                     </a> */}
                   </li>
-                  {/* <li>
-                    <a href="gallery.html" className="nav-link">
+                  <li className={path === "gallery" ? "active" : ""}>
+                    <Link className="nav-link" to="/gallery">
                       Gallery
-                    </a>
+                    </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="blog.html" className="nav-link">
                       Blog
                     </a>
-                  </li> */}
-                  <li>
+                  </li>  */}
+                  <li className={path === "contact" ? "active" : ""}>
                     <Link className="nav-link" to="/contact">
                       Contact
                     </Link>
-                    {/* <a href="contact.html" className="nav-link">
-                      Contact
-                    </a> */}
                   </li>
                 </ul>
               </nav>

@@ -1,24 +1,22 @@
-
-  // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "@firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAD7FfTHVwjxGJT7CZWRd89pB9PVh74qb0",
-    authDomain: "bodhi-spa-fac9b.firebaseapp.com",
-    projectId: "bodhi-spa-fac9b",
-    storageBucket: "bodhi-spa-fac9b.appspot.com",
-    messagingSenderId: "496136159835",
-    appId: "1:496136159835:web:7e8148b34f031baa67f57e",
-    measurementId: "G-1HRPSN5L72"
-  };
-  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getFirestore(app);
-
-  export default analytics
+  apiKey: "AIzaSyCcspp9mbBrbrW_GwoReIxqEqowGlYCw2g",
+  authDomain: "bodhi-spa-be89c.firebaseapp.com",
+  projectId: "bodhi-spa-be89c",
+  storageBucket: "bodhi-spa-be89c.appspot.com",
+  messagingSenderId: "620032922061",
+  appId: "1:620032922061:web:595e88592332e671a87484",
+  measurementId: "G-DXHTP7YF6M",
+};
+const app = initializeApp(firebaseConfig);
+export const firestore = getFirestore(app);
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
